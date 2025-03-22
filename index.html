@@ -26,6 +26,33 @@
             color: white; /* 文字颜色为白色 */
             text-align: center; /* 文本居中对齐 */
         }
+		.video-container {
+		  position: relative;
+		  width: 100%;
+		}
+
+		.auto-play-video {
+		  width: 100%;
+		  height: auto;
+		  display: block; /* 确保视频可见 */
+		}
+
+		.video-overlay-link {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  opacity: 0; /* 隐藏缩略图，但保留点击区域 */
+		  cursor: pointer;
+		}
+
+		.video-thumbnail {
+		  width: 100%;
+		  height: auto;
+		}
+
+		
     </style>
 	</head>
 	<body class="is-preload">
@@ -78,7 +105,17 @@
 						<div class="row">
 						
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/tp.mp4"target="_blank" rel="noopener noreferrer"  class="image fit thumb"><img src="images/fulls/tp.jpg" alt="" /></a>
+								<!-- 新代码：视频嵌入 + 保留跳转链接 -->
+								<div class="video-container">
+								  <!-- 自动播放的视频 -->
+								  <video class="auto-play-video" muted loop playsinline poster="images/fulls/tp.jpg">
+									<source src="images/fulls/tp.mp4" type="video/mp4">
+								  </video>
+								  <!-- 保留原有的跳转链接 -->
+								  <a href="images/fulls/tp.mp4" target="_blank" class="video-overlay-link">
+									<img src="images/fulls/tp.jpg" alt="" class="video-thumbnail">
+								  </a>
+								</div>
 								
 								<h3><a href="images/fulls/tp.mp4" target="_blank" rel="noopener noreferrer"><em>2020/07 ~ 2023/02 ,Image Processing Engineer, TPLINK</em></a></h3>
 								<p>Responsible for the lens selection, function research and image related work of the company's various key projects (high sales volume and good user feedback) as well as the company's first 
@@ -660,5 +697,25 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+			// 自动播放逻辑
+			document.querySelectorAll('.auto-play-video').forEach(video => {
+			  const observer = new IntersectionObserver(
+				(entries) => {
+				  entries.forEach(entry => {
+					if (entry.isIntersecting) {
+					  video.play();
+					} else {
+					  video.pause();
+					}
+				  });
+				},
+				{ threshold: 0.5 } // 当50%的视频进入视口时触发
+			  );
+			  observer.observe(video);
+			});
+
+			// 保留原点击跳转功能（无需修改）
+			</script>
 	</body>
 </html>
