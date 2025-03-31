@@ -1,126 +1,251 @@
 <!DOCTYPE HTML>
-<!-- 其他头部内容保持不变 -->
-<style>
-    /* 新增视频控制样式 */
-    .video-container {
-        position: relative;
-        width: 100%;
-        max-width: 600px; /* 控制最大宽度 */
-        margin: 1rem auto; /* 增加垂直间距 */
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        aspect-ratio: 16/9; /* 固定宽高比 */
-    }
+<!--
+    Strata by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Mingxiang Chen</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            /* 新增的网格布局样式 */
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                row-gap: 3rem;
+                padding: 20px 0;
+            }
 
-    .auto-play-video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* 保持视频比例 */
-        display: block;
-    }
+            @media (max-width: 768px) {
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+            }
 
-    .video-thumbnail {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+            .project-item {
+                background: #fff;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
 
-    /* 调整网格布局 */
-    .row {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        padding: 1rem;
-    }
+            .project-item:hover {
+                transform: translateY(-5px);
+            }
 
-    .work-item {
-        display: flex;
-        flex-direction: column;
-        background: #fff;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: transform 0.3s ease;
-    }
+            /* 保留原有视频样式并优化 */
+            .video-container {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 16/9;
+                overflow: hidden;
+            }
 
-    .work-item:hover {
-        transform: translateY(-5px);
-    }
+            .auto-play-video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
 
-    /* 响应式调整 */
-    @media (max-width: 768px) {
-        .video-container {
-            max-width: 100%;
-            border-radius: 0;
-        }
-        
-        .row {
-            grid-template-columns: 1fr;
-            padding: 0;
-        }
-    }
-</style>
+            .video-overlay-link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                cursor: pointer;
+            }
 
-<!-- 修改后的机器人项目部分 -->
-<section id="videos">
-    <h2>ROBOTICS PROJECTS</h2>
-    <div class="row">
-        <article class="col-6 col-12-xsmall work-item">
-            <div class="video-container">
-                <video class="auto-play-video" muted loop playsinline 
-                      poster="images/fulls/Simple-Robot.png">
-                    <source src="images/fulls/Simple-Robot.mp4" type="video/mp4">
-                </video>
-                <a href="images/fulls/Simple-Robot.mp4" target="_blank" 
-                   class="video-overlay-link">
-                    <img src="images/fulls/Simple-Robot.png" 
-                         alt="Netflix Simple Robot" 
-                         class="video-thumbnail">
-                </a>
+            /* 保留原有其他样式 */
+            h2 {
+                font-family: 'Verdana'; 
+                color: #0000FF;
+            }
+            
+            article p {
+                font-family: 'Georgia'; 
+                color: #333333;
+                padding: 0 15px 15px;
+            }
+
+            #header {
+                background-color: green;
+                padding: 20px;
+                color: white;
+                text-align: center;
+            }
+
+            /* 调整项目内容区域 */
+            .project-content {
+                padding: 15px;
+            }
+
+            /* 保留技能图标样式 */
+            .logo-container {
+                display: inline-block;
+                margin: 10px;
+                width: 60px;
+                height: 60px;
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+                <h1><strong>Mingxiang Chen</strong><br />
+                <span class="highlight">MSc Robotics</span> <br/>
+                <span class="highlight">The University of Manchester</span> <br/>
+                <span class="highlight">Interested in Drones,Medical Robotics,</span><br/>
+                <span class="highlight">Computer Vision and A.I</span> <br />
             </div>
-            <div class="content">
-                <h3>
-                    <a href="https://github.com/CMX-9/Netflix-Simple-Robot" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       style="color:black">
-                      <em>Netflix Simple Robot</em>
-                    </a>
-                </h3>
-                <p>Using some commonly used waste items...</p>
-            </div>
-        </article>
+        </header>
 
-        <article class="col-6 col-12-xsmall work-item">
-            <div class="video-container">
-                <video class="auto-play-video" muted loop playsinline 
-                      poster="images/fulls/Robotics-Sustainable-Development.jpg">
-                    <source src="images/fulls/Robotics-Sustainable-Development.mp4" 
-                            type="video/mp4">
-                </video>
-                <a href="https://youtu.be/601AResOUCM" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="video-overlay-link">
-                    <img src="images/fulls/Robotics-Sustainable-Development.jpg" 
-                         alt="Sustainable Development" 
-                         class="video-thumbnail">
-                </a>
-            </div>
-            <div class="content">
-                <h3>
-                    <a href="https://youtu.be/601AResOUCM" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       style="color:black">
-                      <em>Robotic Systems for Sustainable Development</em>
-                    </a>
-                </h3>
-                <p>Educational video about...</p>
-            </div>
-        </article>
-    </div>
-</section>
+        <!-- Main -->
+        <div id="main">
+
+            <!-- About Section -->
+            <section id="one">
+                <header class="major">
+                    <h2>About Me</h2>
+                </header>
+                <p>I am a postgraduate student at the University of Manchester...</p>
+            </section>
+
+            <!-- Working Projects -->
+            <section id="pproj">
+                <h2>WORKING PROJECTS</h2>
+                <div class="projects-grid">
+                    <!-- TPLINK Project -->
+                    <article class="project-item">
+                        <div class="video-container">
+                            <video class="auto-play-video" muted loop playsinline poster="images/fulls/tp.jpg">
+                                <source src="images/fulls/tp.mp4" type="video/mmp4">
+                            </video>
+                            <a href="images/fulls/tp.mp4" target="_blank" class="video-overlay-link">
+                                <img src="images/fulls/tp.jpg" alt="" class="video-thumbnail">
+                            </a>
+                        </div>
+                        <div class="project-content">
+                            <h3>TPLINK Project</h3>
+                            <p>Responsible for the lens selection...</p>
+                        </div>
+                    </article>
+
+                    <!-- Beijing T&S Project -->
+                    <article class="project-item">
+                        <div class="video-container">
+                            <video class="auto-play-video" muted loop playsinline poster="images/fulls/chenan.png">
+                                <source src="images/fulls/chenan-work video2.mp4" type="video/mp4">
+                            </video>
+                            <a href="images/fulls/chenan-work video2.mp4" target="_blank" class="video-overlay-link">
+                                <img src="images/fulls/chenan.png" alt="" class="video-thumbnail">
+                            </a>
+                        </div>
+                        <div class="project-content">
+                            <h3>Beijing T&S Project</h3>
+                            <p>1）Complete this company's first camera...</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- University Projects -->
+            <section id="uniproj">
+                <h2>UNIVERSITY PROJECTS</h2>
+                <div class="projects-grid">
+                    <!-- Aviation Booking -->
+                    <article class="project-item">
+                        <div class="video-container">
+                            <video class="auto-play-video" muted loop playsinline poster="images/fulls/booking.png">
+                                <source src="images/fulls/Aviation-booking.mp4" type="video/mp4">
+                            </video>
+                            <a href="images/fulls/Aviation-booking.mp4" target="_blank" class="video-overlay-link">
+                                <img src="images/fulls/booking.png" alt="" class="video-thumbnail">
+                            </a>
+                        </div>
+                        <div class="project-content">
+                            <h3>Aviation Booking System</h3>
+                            <p>Real-time aviation information management system...</p>
+                        </div>
+                    </article>
+
+                    <!-- Key Point Detection -->
+                    <article class="project-item">
+                        <div class="video-container">
+                            <video class="auto-play-video" muted loop playsinline poster="images/fulls/key-point-detection.png">
+                                <source src="images/fulls/key-point-detection-result.mp4" type="video/mp4">
+                            </video>
+                            <a href="images/fulls/key-point-detection-result.mp4" target="_blank" class="video-overlay-link">
+                                <img src="images/fulls/key-point-detection.png" alt="" class="video-thumbnail">
+                            </a>
+                        </div>
+                        <div class="project-content">
+                            <h3>Key Point Detection</h3>
+                            <p>Neural network based detection system...</p>
+                        </div>
+                    </article>
+
+                    <!-- 其他项目保持相同结构 -->
+                </div>
+            </section>
+
+            <!-- 保留其他部分（Skills/Awards/Contact等） -->
+            <section id="skills">
+                <h2>SKILLS</h2>
+                <div class="logo-container">
+                    <img class="programming-logo" src="images/thumbs/python.png" alt="Python">
+                </div>
+                <!-- 其他技能图标 -->
+            </section>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <ul class="icons">
+                        <!-- 保留社交链接 -->
+                    </ul>
+                    <ul class="copyright">
+                        <li>&copy; Mingxiang Chen 2024</li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.poptrox.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!-- 自动播放脚本 -->
+        <script>
+            document.querySelectorAll('.auto-play-video').forEach(video => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            video.play();
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(video);
+            });
+        </script>
+
+    </body>
+</html>
