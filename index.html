@@ -1,836 +1,126 @@
 <!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Mingxiang Chen</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		 <style>
-        h2 {
-            font-family: 'Verdana'; 
-            color: #0000FF;
+<!-- 其他头部内容保持不变 -->
+<style>
+    /* 新增视频控制样式 */
+    .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px; /* 控制最大宽度 */
+        margin: 1rem auto; /* 增加垂直间距 */
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        aspect-ratio: 16/9; /* 固定宽高比 */
+    }
+
+    .auto-play-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 保持视频比例 */
+        display: block;
+    }
+
+    .video-thumbnail {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* 调整网格布局 */
+    .row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .work-item {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .work-item:hover {
+        transform: translateY(-5px);
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+        .video-container {
+            max-width: 100%;
+            border-radius: 0;
         }
-        article p {
-            font-family: 'Georgia'; 
-            color: 333333;
+        
+        .row {
+            grid-template-columns: 1fr;
+            padding: 0;
         }
-		 #header {
-            <!-- width: 32%; /* 设置宽度为100%，占满整个页面 */ -->
-            background-color: green; /* 背景颜色为钢蓝色 */
-            padding: 20px; /* 内边距 */
-            color: white; /* 文字颜色为白色 */
-            text-align: center; /* 文本居中对齐 */
-        }
-		.video-container {
-		  position: relative;
-		  width: 100%;
-		}
+    }
+</style>
 
-		.auto-play-video {
-		  width: 100%;
-		  height: auto;
-		  display: block; /* 确保视频可见 */
-		}
+<!-- 修改后的机器人项目部分 -->
+<section id="videos">
+    <h2>ROBOTICS PROJECTS</h2>
+    <div class="row">
+        <article class="col-6 col-12-xsmall work-item">
+            <div class="video-container">
+                <video class="auto-play-video" muted loop playsinline 
+                      poster="images/fulls/Simple-Robot.png">
+                    <source src="images/fulls/Simple-Robot.mp4" type="video/mp4">
+                </video>
+                <a href="images/fulls/Simple-Robot.mp4" target="_blank" 
+                   class="video-overlay-link">
+                    <img src="images/fulls/Simple-Robot.png" 
+                         alt="Netflix Simple Robot" 
+                         class="video-thumbnail">
+                </a>
+            </div>
+            <div class="content">
+                <h3>
+                    <a href="https://github.com/CMX-9/Netflix-Simple-Robot" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       style="color:black">
+                      <em>Netflix Simple Robot</em>
+                    </a>
+                </h3>
+                <p>Using some commonly used waste items...</p>
+            </div>
+        </article>
 
-		.video-overlay-link {
-		  position: absolute;
-		  top: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 100%;
-		  opacity: 0; /* 隐藏缩略图，但保留点击区域 */
-		  cursor: pointer;
-		}
-
-		.video-thumbnail {
-		  width: 100%;
-		  height: auto;
-		}
-
-		/* 确保标题链接样式 */
-		h3 a {
-		  text-decoration: none; 
-		  transition: color 0.3s ease;
-		}
-
-		h3 a:hover {
-		  color: #007bff !important; /* 与你的主题色匹配 */
-		}
-
-    </style>
-	</head>
-	<body class="is-preload">
-
-		<!-- Header -->
-		<header id="header">
-			<div class="inner">
-				<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-				<h1><strong>Mingxiang Chen</strong><br />
-				<span class="highlight">MSc Robotics</span> <br/>
-				<span class="highlight">The University of Manchester</span> <br/>
-				<span class="highlight">Interested in Drones,Medical Robotics,</span><br/>
-				<span class="highlight">Computer Vision and A.I</span> <br />
-			</div>
-		</header>
-		
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>About Me</h2>
-						</header>
-						<p>I am a postgraduate student at the University of Manchester, studying Robotics. I received my BSc (Hons) from The Huazhong University of Science and Technology.<br>
-						I am passionate about technology and enjoy using the latest software and hardware to solve problems. <br>
-						In the future, I would like to start a startup focusing on a field that interests me, such as Autonomous Vehicles, SLAM, Computer Vision, and AI.</p>
-					</section>
-					
-					<!-- Research Interests -->
-					<!--
-						<section id="competitions">
-						<h2>Research Interests</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/thumbs/hackathon2024.jpg" target="_blank" rel="noopener noreferrer" class="image fit thumb"><img src="images/thumbs/hackathon2024.jpg" alt="" /></a>
-								<h3><a href="https://github.com/CS101-o/robots-team-5" target="_blank" rel="noopener noreferrer">UoM Robotics Society Hack-A-Bot2024</a></h3>
-								<p>A basic swarm consisting of 2 robots was deployed to navigate and map the entire maze using the MONA robots. My role in the team was to develop localisation software. 
-									This software utilised infrared proximity sensors to determine the position of the walls relative to a global frame and the robot's orientation. 
-									Additionally, I worked on communication software utilising NRF24 radio modules for ground control and communication between the agents.</p>
-							</article>
-					</section>    
-					-->
-
-
-				<!-- Two -->
-					<section id="pproj">
-						<h2>WORKING PROJECTS</h2>
-						<div class="row">
-						
-							<article class="col-6 col-12-xsmall work-item">
-							  <div class="video-container">
-								<video class="auto-play-video" muted loop playsinline poster="images/fulls/tp.jpg">
-								  <source src="images/fulls/tp.mp4" type="video/mp4">
-								</video>
-								<a href="images/fulls/tp.mp4" target="_blank" class="video-overlay-link">
-								  <img src="images/fulls/tp.jpg" alt="" class="video-thumbnail">
-								</a>
-							  </div>
-							  <h3>
-								<a href="https://github.com/CMX-9/working-projects" 
-								   target="_blank" 
-								   rel="noopener noreferrer" 
-								   style="color:black">
-								  <em>2020/07 ~ 2023/02 ,Image Processing Engineer, TPLINK</em>
-								</a>
-							  </h3>
-							  <p>Responsible for the lens selection, function research and image related work of the company's various key projects (high sales volume and good user feedback) as well as the company's first 
-															and most valued full-featured high-speed dome project. Responsible for the training of new employees in the two courses ‘sensor principle and performance’ and ‘image brightness processing principle’ 
-															and the development of the ‘image brightness processing principle’ course. <br>Conducted several topic studies, such as the topic of humanoid optimisation.</p>
-							</article>
-							
-							<article class="col-6 col-12-xsmall work-item">
-							  <div class="video-container">
-								<video class="auto-play-video" muted loop playsinline poster="images/fulls/chenan.png">
-								  <source src="images/fulls/chenan-work video2.mp4" type="video/mp4">
-								</video>
-								<a href="images/fulls/chenan-work video2.mp4" target="_blank" class="video-overlay-link">
-								  <img src="images/fulls/chenan.png" alt="" class="video-thumbnail">
-								</a>
-							  </div>
-							  <h3>
-								<a href="https://github.com/CMX-9/working-projects" 
-								   target="_blank" 
-								   rel="noopener noreferrer" 
-								   style="color:black">
-								  <em>2023/11/15~2024/07/29, Image Debugging Engineer, Beijing T&S Technology Co.</em>
-								</a>
-							  </h3>
-							  <p>1）Complete this company's first camera image parameter debugging and shipment. <br>
-															2）Write a lot of image group normative annotation technical guidance documents and test cases, etc. <br>
-															3）Assist in the completion of the book laboratory and the big video division exhibition building.</p>
-							</article>
-						
-					</section>
-					
-				<!-- Two -->
-					<section id="uniproj">
-						<h2>UNIVERSITY PROJECTS</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-							  <div class="video-container">
-								<video class="auto-play-video" muted loop playsinline poster="images/fulls/workpiece-inspection.png">
-								  <source src="images/fulls/workpiece inspection.mp4" type="video/mp4">
-								</video>
-								<a href="images/fulls/workpiece inspection.mp4" target="_blank" class="video-overlay-link">
-								  <img src="images/fulls/workpiece-inspection.png" alt="" class="video-thumbnail">
-								</a>
-							  </div>
-							  <h3>
-								<a href="https://github.com/CMX-9/Workpiece-Inspection" 
-								   target="_blank" 
-								   rel="noopener noreferrer" 
-								   style="color:black">
-								  <em>Workpiece Inspection</em>
-								</a>
-							  </h3>
-							  <p>Gigabit Ethernet industrial cameras are used to acquire pictures in real time, and on the Microsoft Visual C++ platform, image processing knowledge 
-															is applied to achieve workpiece classification detection (such as screws, nuts, etc.) and automatic recognition. (such as screws, nuts, etc.), 
-															automatic identification of workpiece categories, counting the number of workpieces and area. First of all, image grey scale and binarization processing, 
-															the presence of noise on the image will affect the detection, so it is necessary to further image denoising pre-processing, and then find the connecting region,
-															through the boundary detection and region growth and other ways to obtain features (size, shape, area, grey value of the centre and other features), 
-															and finally to achieve the goal of detecting and identifying.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-							  <div class="video-container">
-								<video class="auto-play-video" muted loop playsinline poster="images/fulls/small-detection.bmp">
-								  <source src="images/fulls/Small target detection of ships in the field of navigation.mp4" type="video/mp4">
-								</video>
-								<a href="images/fulls/Small target detection of ships in the field of navigation.mp4" target="_blank" class="video-overlay-link">
-								  <img src="images/fulls/small-detection.bmp" alt="" class="video-thumbnail">
-								</a>
-							  </div>
-							  <h3>
-								<a href="https://github.com/CMX-9/Small-target-detection" 
-								   target="_blank" 
-								   rel="noopener noreferrer" 
-								   style="color:black">
-								  <em>Small target detection of ships in the field of navigation</em>
-								</a>
-							  </h3>
-							  <p>In Visual Studio platform, C programming is used to achieve the detection of small targets on ships based on multi-feature analysis and morphological reconstruction. 
-															Accompanied by complex sea clutter background of different sizes, different numbers, different brightness, different shapes of the ship targets have a low false detection rate, 
-															the detection results using a rectangular box, the output of the number of detection results and the specific location.
-							  </p>
-							
-							<article class="col-6 col-12-xsmall work-item">
-							  <div class="video-container">
-								<video class="auto-play-video" muted loop playsinline poster="images/fulls/booking.png">
-								  <source src="images/fulls/Aviation booking and information management system.mp4" type="video/mp4">
-								</video>
-								<a href="images/fulls/Aviation booking and information management system.mp4" target="_blank" class="video-overlay-link">
-								  <img src="images/fulls/booking.png" alt="" class="video-thumbnail">
-								</a>
-							  </div>
-							  <h3>
-								<a href="https://github.com/CMX-9/Aviation-booking-and-information-management-system" 
-								   target="_blank" 
-								   rel="noopener noreferrer" 
-								   style="color:black">
-								  <em>Aviation booking and information management system</em>
-								</a>
-							  </h3>
-							  <p>Realise the real-time aviation information management system with C language programming, provide friendly aviation passengers and administrators with basic operation interface, 
-															realise administrators‘ backstage information management (e.g. adding, deleting, modifying flights, etc.), passengers and administrators’ log-in, passengers booking and refunding, 
-															and passengers' information modification.</p>
-							</article>
-
-							<!-- <article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/key-point-detection-result.mp4" target="_blank" rel="noopener noreferrer" class="image fit thumb"><img src="images/fulls/key-point-detection.png" alt="" /></a>
-								<h3><a href="https://github.com/CMX-9/Remote-sensing-image-key-point-detection" target="_blank" rel="noopener noreferrer" style="color:black"><em>Remote sensing image key point detection</em></a></h3>
-								<p>The neural network method Faster R-CNN is implemented on the basis of the neural network method. First of all, the algorithm comparison 
-								analysis research to determine the algorithm and optimisation strategy, and then the data set collection and slicing as well as data calibration, 
-								followed by the establishment of neural networks, the detection of key points such as the corners of the surface building to achieve accurate guidance, 
-								training of the neural network, and ultimately the neural network detection and so on.</p>
-							</article> -->
-							
-							<article class="col-6 col-12-xsmall work-item">
-							  <div class="video-container">
-								<video class="auto-play-video" muted loop playsinline poster="images/fulls/key-point-detection.png">
-								  <source src="images/fulls/key-point-detection-result.mp4" type="video/mp4">
-								</video>
-								<a href="images/fulls/key-point-detection-result.mp4" target="_blank" class="video-overlay-link">
-								  <img src="images/fulls/key-point-detection.png" alt="" class="video-thumbnail">
-								</a>
-							  </div>
-							  <h3>
-								<a href="https://github.com/CMX-9/Remote-sensing-image-key-point-detection" 
-								   target="_blank" 
-								   rel="noopener noreferrer" 
-								   style="color:black">
-								  <em>Remote sensing image key point detection</em>
-								</a>
-							  </h3>
-							  <p>The neural network method Faster R-CNN is implemented on the basis of the neural network method. First of all, the algorithm comparison 
-								analysis research to determine the algorithm and optimisation strategy, and then the data set collection and slicing as well as data calibration, 
-								followed by the establishment of neural networks, the detection of key points such as the corners of the surface building to achieve accurate guidance, 
-								training of the neural network, and ultimately the neural network detection and so on.</p>
-							</article>
-				
-					</section>
-
-				<!-- Videos -->
-					<section id="videos">
-						<h2>ROBOTICS PROJECTS</h2>
-						<div class="row">	
-							<article class="col-6 col-12-xsmall work-item">
-							  <div class="video-container">
-								<video class="auto-play-video" muted loop playsinline poster="images/fulls/Simple-Robot.png">
-								  <source src="images/fulls/Simple-Robot.mp4" type="video/mp4">
-								</video>
-								<a href="images/fulls/Simple-Robot.mp4" target="_blank" class="video-overlay-link">
-								  <img src="images/fulls/Simple-Robot.png" alt="" class="video-thumbnail">
-								</a>
-							  </div>
-							  <h3>
-								<a href="https://github.com/CMX-9/Netflix-Simple-Robot" 
-								   target="_blank" 
-								   rel="noopener noreferrer" 
-								   style="color:black">
-								  <em>Netflix Simple Robot</em>
-								</a>
-							  </h3>
-							  <p>Using some commonly used waste items in life, we design a web robot that can be remotely controlled to walk, can walk autonomously, 
-																						and can avoid obstacles when it meets obstacles. The robot's subsequent optimisation direction: automatic tracing function, 
-																						voice control function, interactive function (including feedback on voice, vibration, etc.).</p>
-							
-							<article class="col-6 col-12-xsmall work-item">
-							  <!-- YouTube 视频容器（保持与其他视频区块一致） -->
-							  <div class="video-container">
-								<!-- 使用封面图模拟视频预览 -->
-								<video class="auto-play-video" muted loop playsinline poster="images/fulls/Robotics-Sustainable-Development.jpg">
-								  <source src="images/fulls/Robotics-Sustainable-Development.mp4" type="video/mp4">
-								</video>
-								<!-- 覆盖层链接跳转 YouTube -->
-								<a href="https://youtu.be/601AResOUCM" 
-								   target="_blank" 
-								   rel="noopener noreferrer" 
-								   class="video-overlay-link">
-								</a>
-							  </div>
-
-							  <!-- 标题保留原链接 -->
-							  <h3>
-								<a href="https://youtu.be/601AResOUCM" 
-								   target="_blank" 
-								   rel="noopener noreferrer" 
-								   style="color:black">
-								  <em>Robotic Systems for Sustainable Development</em>
-								</a>
-							  </h3>
-							  
-							  <p>Educational video about the contribution of robotic systems to addressing the challenges around sustainability and their ethical perspective. </p>
-							</article>
-
-						<!-- <article class="col-6 col-12-xsmall work-item"> -->
-								<!-- <a href="https://youtu.be/ARqTtTyTKZU" target="_blank" rel="noopener noreferrer" class="image fit thumb"><img src="images/thumbs/video2.png" alt="" /></a> -->
-								<!-- <h3><a href="https://youtu.be/ARqTtTyTKZU" target="_blank" rel="noopener noreferrer">Ethics for Autonomous and Intelligent Systems (A/IS)</a></h3> -->
-							<!-- <p>Educational video about the significant role of ethical considerations for Autonomous and Intelligent Systems (A/IS) in the successful adoption of new technologies. </p> -->
-
-					   <!-- </article>	 -->
-					</section>
-					
-
-
-				<!-- Skills -->
-					<section id="skills">
-						<h2>SKILLS</h2>
-						    
-						<div class="logo-container">
-							<!-- <a href="assets/python.pdf" target="_blank" rel="noopener noreferrer"> -->
-							<img class="programming-logo" src="images\thumbs\python.png" alt="Python"></a>
-						</div>
-						<div class="logo-container">
-							<img class="programming-logo" src="images\thumbs\c.png" alt="C">
-						</div>
-						<div class="logo-container">
-							<!-- <a href="assets/c++.pdf" target="_blank" rel="noopener noreferrer"> -->
-							<img class="programming-logo" src="images\thumbs\cpp.png" alt="C++"></a>
-						</div>
-						<div class="logo-container">
-							<img class="programming-logo" src="images\thumbs\matlab.png" alt="Matlab">
-						</div>
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\opencv.png" alt="OpenCV"> -->
-						<!-- </div> -->
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\tf.png" alt="Tensorflow"> -->
-						<!-- </div> -->
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\pytorch.png" alt="PyTorch"> -->
-						<!-- </div> -->
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\git.png" alt="Git"> -->
-						<!-- </div> -->
-						<div class="ros-container">
-							<img class="ros-logo" src="images\thumbs\ros.png" alt="Ros">
-						</div>
-						<div class="logo-container">
-							<img class="programming-logo" src="images\thumbs\vscode.png" alt="VSCode">
-						</div>
-						<div class="logo-container">
-							<img class="programming-logo" src="images\thumbs\pycharm.png" alt="PyCharm">
-						</div>
-						<div class="logo-container">
-							<img class="programming-logo" src="images\thumbs\jupyter.png" alt="Jupyter">
-						</div>
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\arduino.png" alt="Arduino"> -->
-						<!-- </div> -->
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\rpi.png" alt="Raspberry"> -->
-						<!-- </div> -->
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\altium.png" alt="Altium"> -->
-						<!-- </div> -->
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\labview.png" alt="Labview"> -->
-						<!-- </div> -->
-						<div class="logo-container">
-							<img class="programming-logo" src="images\thumbs\tinkercad.png" alt="Tinkercad">
-						</div>
-
-					</section>
-
-					Select Awards & Honor
-					<section id="Awards">
-						<h2>Select Awards & Honor</h2>
-						<div class="content-container">
-							<div class="award-section">
-								<h3><a href="images/fulls/C certificate.jpg" target="_blank" rel="noopener noreferrer" style="color:black"><em>* Software</em></a></h3>
-								<p>Computer Level 2 Certificate (Language Programming Category)</p>
-						    </div>
-							<div class="award-section">
-								<h3><a style="color:black"><em>* Activities</em></a></h3>
-								<p>2016.10-2016.11 Fourth place in the Faculty Planning Competition; rich experience in project management and coordination.</p>
-						    </div>
-							<div class="award-section">
-								<h3><a href="images/fulls/scholarship.jpg" target="_blank" rel="noopener noreferrer" style="color:black"><em>* Scholarships</em></a></h3>
-								<p>Freshman & Junior Culture & Sports Scholarship; Sophomore Self-improvement Scholarship</p>
-						    </div>
-
-							<!-- <article class="col-6 col-12-xsmall work-item"> -->
-								<!-- <a href="images/thumbs/hackathon.jpg" target="_blank" rel="noopener noreferrer" class="image fit thumb"><img src="images/thumbs/hackathon.jpg" alt="" /></a> -->
-								<!-- <h3><a href="https://github.com/UoM-Robotics-Society/HackABot2023" target="_blank" rel="noopener noreferrer">UoM Robotics Society Hack-A-Bot2023</a></h3> -->
-								<!-- <p>A basic swarm consisting of 2 robots was developed to play football against another team using the MONA Robots.  -->
-									<!-- My role in the team was to develop communication software (NRF24 radio modules) for ground control and the agents.</p> -->
-							<!-- </article> -->
-
-							<!-- <article class="col-6 col-12-xsmall work-item"> -->
-								<!-- <a href="images/fulls/cansat.mp4" target="_blank" rel="noopener noreferrer" class="image fit thumb"><img src="images/fulls/cansat.gif" alt="" /></a><h3>American Astronautical Society (AAS) CanSat</h3> -->
-								<!-- <p>Can-sized satellite equipped with microcontrollers, sensors, and communication equipment to perform various tasks, such as collecting data and transmitting it to a ground station. My role in the team was to select the necessary sensors and design the PCBs.</p> -->
-							<!-- </article> -->
-					</section>
-				<!-- Three -->
-					<section id="three">
-						<h2>Get In Touch</h2>
-						<p>Ready to start a conversation? I would love to hear from you. Feel free to reach out for collaboration, inquiries, or just to say hello!</p>
-						<div class="row">
-							<div class="col-8 col-12-small">
-								<form method="post" action="#">
-									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-										(+44) 7377927864
-									</li>
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="mailto:chenxianghust163@gmail.com" target="_blank" rel="noopener noreferrer">chenxianghust163@gmail.com</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
-				<!-- Four -->
-				<!--
-					<section id="four">
-						<h2>Elements</h2>
-
-						<section>
-							<h4>Text</h4>
-							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-							<hr />
-							<header>
-								<h4>Heading with a Subtitle</h4>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<header>
-								<h5>Heading with a Subtitle</h5>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<hr />
-							<h2>Heading Level 2</h2>
-							<h3>Heading Level 3</h3>
-							<h4>Heading Level 4</h4>
-							<h5>Heading Level 5</h5>
-							<h6>Heading Level 6</h6>
-							<hr />
-							<h5>Blockquote</h5>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-							<h5>Preformatted</h5>
-							<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section>
-
-						<section>
-							<h4>Lists</h4>
-							<div class="row">
-								<div class="col-6 col-12-xsmall">
-									<h5>Unordered</h5>
-									<ul>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-									<h5>Alternate</h5>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<h5>Ordered</h5>
-									<ol>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ol>
-									<h5>Icons</h5>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-									</ul>
-								</div>
-							</div>
-							<h5>Actions</h5>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Default</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions small">
-								<li><a href="#" class="button primary small">Small</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary fit">Default</a></li>
-										<li><a href="#" class="button fit">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small fit">Small</a></li>
-										<li><a href="#" class="button small fit">Small</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section>
-							<h4>Table</h4>
-							<h5>Default</h5>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-
-							<h5>Alternate</h5>
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
-
-						<section>
-							<h4>Buttons</h4>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Primary</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button large">Large</a></li>
-								<li><a href="#" class="button">Default</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<ul class="actions fit">
-								<li><a href="#" class="button primary fit">Fit</a></li>
-								<li><a href="#" class="button fit">Fit</a></li>
-							</ul>
-							<ul class="actions fit small">
-								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-								<li><a href="#" class="button fit small">Fit + Small</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-								<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-							</ul>
-							<ul class="actions">
-								<li><span class="button primary disabled">Primary</span></li>
-								<li><span class="button disabled">Default</span></li>
-							</ul>
-						</section>
-
-						<section>
-							<h4>Form</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
-										</select>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-										<label for="demo-priority-low">Low Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-normal" name="demo-priority">
-										<label for="demo-priority-normal">Normal Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-high" name="demo-priority">
-										<label for="demo-priority-high">High Priority</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-copy" name="demo-copy">
-										<label for="demo-copy">Email me a copy of this message</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" checked>
-										<label for="demo-human">I am a human and not a robot</label>
-									</div>
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
-
-						<section>
-							<h4>Image</h4>
-							<h5>Fit</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-								</div>
-							</div>
-							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						</section>
-
-					</section>
-				-->
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/CMX-9" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/mingxiang-chen-1b69a8333/" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<!-- <li><a href="https://www.quora.com/profile/Michalis-Iacovides-3" target="_blank" rel="noopener noreferrer" class="icon brands fa-quora"><span class="label">Quora</span></a></li> -->
-						<li><a href="mailto:chenxianghust163@gmail.com" target="_blank" rel="noopener noreferrer" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer" class="button" style="background-color: lightgray;">CV</a></li>
-					</ul>
-					<!-- <ul class="actions"> -->
-						<!-- <li><a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer" class="button">CV</a></li> style="height: 50px; background-color: lightgray;"-->
-					<!-- </ul> -->
-					<ul class="copyright">
-						<li>&copy; mingxiang chen 2024</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						<li>Based on a template by michalisiakovides(https://github.com/michalisiakovides/michalisiakovides.github.io).</li> 
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			
-		<!-- <script> -->
-			<!-- function openFusion360Popup() { -->
-				<!-- var modal = document.getElementById("fusion360Modal"); -->
-				<!-- var iframe = document.getElementById("fusion360Viewer"); -->
-				<!-- iframe.src = "https://postgrad297.autodesk360.com/shares/public/SH512d4QTec90decfa6ebf9370ef393e15b3?mode=embed"; -->
-				<!-- modal.style.display = "block"; -->
-			<!-- } -->
-		
-			<!-- function closeFusion360Popup(event) { -->
-				<!-- event.preventDefault(); // Prevent the default behavior of the anchor link -->
-				<!-- var modal = document.getElementById("fusion360Modal"); -->
-				<!-- modal.style.display = "none"; -->
-			<!-- } -->
-		<!-- </script> -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-			<script>
-			// 自动播放逻辑
-			document.querySelectorAll('.auto-play-video').forEach(video => {
-			  const observer = new IntersectionObserver(
-				(entries) => {
-				  entries.forEach(entry => {
-					if (entry.isIntersecting) {
-					  video.play();
-					} else {
-					  video.pause();
-					}
-				  });
-				},
-				{ threshold: 0.5 } // 当50%的视频进入视口时触发
-			  );
-			  observer.observe(video);
-			});
-
-			// 保留原点击跳转功能（无需修改）
-			</script>
-	</body>
-</html>
+        <article class="col-6 col-12-xsmall work-item">
+            <div class="video-container">
+                <video class="auto-play-video" muted loop playsinline 
+                      poster="images/fulls/Robotics-Sustainable-Development.jpg">
+                    <source src="images/fulls/Robotics-Sustainable-Development.mp4" 
+                            type="video/mp4">
+                </video>
+                <a href="https://youtu.be/601AResOUCM" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="video-overlay-link">
+                    <img src="images/fulls/Robotics-Sustainable-Development.jpg" 
+                         alt="Sustainable Development" 
+                         class="video-thumbnail">
+                </a>
+            </div>
+            <div class="content">
+                <h3>
+                    <a href="https://youtu.be/601AResOUCM" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       style="color:black">
+                      <em>Robotic Systems for Sustainable Development</em>
+                    </a>
+                </h3>
+                <p>Educational video about...</p>
+            </div>
+        </article>
+    </div>
+</section>
