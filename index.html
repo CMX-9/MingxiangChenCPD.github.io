@@ -1,121 +1,443 @@
-<!-- University Projects 完整段落 -->
-<section id="uniproj">
-    <h2>UNIVERSITY PROJECTS</h2>
-    <div class="projects-grid">
-        <!-- Workpiece Inspection -->
-        <article class="project-item">
-            <!-- 视频部分保持不变... -->
-            <div class="project-content">
-                <h3><em>Workpiece Inspection</em></h3>
-                <p>Gigabit Ethernet industrial cameras are used to acquire pictures in real time, and on the Microsoft Visual C++ platform, image processing knowledge is applied to achieve workpiece classification detection (such as screws, nuts, etc.) and automatic recognition. Automatic identification of workpiece categories, counting the number of workpieces and area. First of all, image grey scale and binarization processing, the presence of noise on the image will affect the detection, so it is necessary to further image denoising pre-processing, and then find the connecting region, through the boundary detection and region growth and other ways to obtain features (size, shape, area, grey value of the centre and other features), and finally to achieve the goal of detecting and identifying.</p>
-            </div>
-        </article>
+<!DOCTYPE HTML>
+<!--
+    Strata by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Mingxiang Chen</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            /* 统一网格布局系统 */
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(300px, 1fr));
+                gap: 2rem;
+                row-gap: 3rem;
+                padding: 20px 0;
+            }
 
-        <!-- Small Target Detection -->
-        <article class="project-item">
-            <!-- 视频部分保持不变... -->
-            <div class="project-content">
-                <h3><em>Small Target Detection</em></h3>
-                <p>In Visual Studio platform, C programming is used to achieve the detection of small targets on ships based on multi-feature analysis and morphological reconstruction. Accompanied by complex sea clutter background of different sizes, different numbers, different brightness, different shapes of the ship targets have a low false detection rate, the detection results using a rectangular box, the output of the number of detection results and the specific location. The algorithm demonstrates robustness in varying weather conditions and achieves 92% detection accuracy in real-world scenarios.</p>
-            </div>
-        </article>
+            @media (max-width: 768px) {
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+            }
 
-        <!-- Aviation Booking System -->
-        <article class="project-item">
-            <!-- 视频部分保持不变... -->
-            <div class="project-content">
-                <h3><em>Aviation Booking System</em></h3>
-                <p>Developed a real-time aviation information management system using C programming, providing a user-friendly interface for both passengers and administrators. Key features include:
-                    <br>• Administrator backend for flight management (add/delete/modify flights)
-                    <br>• Secure login system for both users and administrators
-                    <br>• Real-time seat booking and cancellation functionality
-                    <br>• Passenger information management module
-                    <br>The system supports concurrent access from 1000+ users with response time under 200ms.</p>
-            </div>
-        </article>
+            /* 项目卡片通用样式 */
+            .project-item {
+                background: #fff;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+                display: flex;
+                flex-direction: column;
+            }
 
-        <!-- Key Point Detection -->
-        <article class="project-item">
-            <!-- 视频部分保持不变... -->
-            <div class="project-content">
-                <h3><em>Remote Sensing Key Points</em></h3>
-                <p>Implemented a neural network-based detection system using Faster R-CNN architecture for accurate identification of building corners in satellite imagery. Key achievements:
-                    <br>• Achieved 94.7% detection accuracy on test dataset
-                    <br>• Reduced false positive rate to 2.3% through data augmentation
-                    <br>• Optimized inference speed to 0.8s per image (1024x1024px)
-                    <br>The system integrates OpenCV for image preprocessing and TensorFlow for model training, demonstrating strong performance in urban planning applications.</p>
-            </div>
-        </article>
-    </div>
-</section>
+            .project-item:hover {
+                transform: translateY(-5px);
+            }
 
-<!-- Robotics Projects 完整段落 -->
-<section id="robotics-projects">
-    <h2>ROBOTICS PROJECTS</h2>
-    <div class="projects-grid">
-        <article class="project-item">
-            <!-- 视频部分保持不变... -->
-            <div class="project-content">
-                <h3><em>Netflix Simple Robot</em></h3>
-                <p>Designed and prototyped a web-controlled mobile robot using recycled materials and off-the-shelf components. Key features:
-                    <br>• Raspberry Pi 4B as central controller
-                    <br>• NRF24L01 for wireless communication (50m range)
-                    <br>• Ultrasonic sensors for obstacle avoidance
-                    <br>• Web interface with live video streaming
-                    <br>Future improvements plan to integrate SLAM for autonomous navigation and implement voice control using NLP techniques.</p>
-            </div>
-        </article>
+            /* 视频容器通用样式 */
+            .video-container {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 16/9;
+                overflow: hidden;
+				background: #000; /* 添加黑色背景 */
+                flex: 1;
+            }
 
-        <article class="project-item">
-            <!-- 视频部分保持不变... -->
-            <div class="project-content">
-                <h3><em>Sustainable Robotics</em></h3>
-                <p>Produced an educational video exploring the role of robotic systems in sustainable development, covering:
-                    <br>• Environmental monitoring drones
-                    <br>• AI-powered recycling systems
-                    <br>• Agricultural automation solutions
-                    <br>• Ethical considerations in robotic deployment
-                    <br>The video received over 5,000 views on YouTube and was featured in university sustainability seminars.</p>
-            </div>
-        </article>
-    </div>
-</section>
+            .auto-play-video {
+                width: 100%;
+                height: 100%;
+				object-fit: contain; /* 改为contain保持完整显示 */
+				display: block;
+				transition: opacity 0.3s;
+            }
 
-<!-- Awards Section 完整段落 -->
-<section id="awards">
-    <h2>SELECT AWARDS & HONOR</h2>
-    <div class="projects-grid">
-        <article class="project-item">
-            <div class="project-content">
-                <h3><em>* Software Certification</em></h3>
-                <p>Obtained National Computer Rank Examination (Level 2 C Language) certification with distinction, demonstrating advanced proficiency in:
-                    <br>• Data structures and algorithms
-                    <br>• Memory management techniques
-                    <br>• File I/O operations
-                    <br>• Multi-module programming</p>
-            </div>
-        </article>
-        
-        <article class="project-item">
-            <div class="project-content">
-                <h3><em>* Competition Awards</em></h3>
-                <p>Awarded 4th Place in 2016 Faculty Innovation Competition for developing a smart campus navigation system featuring:
-                    <br>• Indoor positioning accuracy of ±1.5m
-                    <br>• AR-based navigation interface
-                    <br>• Energy-efficient Bluetooth Low Energy implementation
-                    <br>• Real-time crowd analysis algorithm</p>
-            </div>
-        </article>
+			/* 添加加载状态指示 */
+			.video-container.loading::after {
+				content: "Loading...";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+			}
+            .video-overlay-link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                cursor: pointer;
+            }
 
-        <article class="project-item">
-            <div class="project-content">
-                <h3><em>* Scholarships</em></h3>
-                <p>Recipient of multiple academic honors:
-                    <br>• 2018 Freshman Academic Excellence Scholarship (Top 5%)
-                    <br>• 2019-2020 Continuous Excellence Scholarship
-                    <br>• 2021 Innovation Practice Scholarship
-                    <br>• 2022 Outstanding Graduate Award</p>
+            /* 颜色修正 */
+            h2 {
+                font-family: 'Verdana';
+                color: #0000FF; /* 保持蓝色标题 */
+            }
+
+            h3 a {
+                color: #000080 !important; /* 深蓝色标题 */
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            h3 a:hover {
+                color: #007bff !important;
+            }
+
+            .project-content p {
+                color: #666; /* 深灰色内容 */
+                font-family: 'Georgia';
+                line-height: 1.6;
+            }
+
+            /* 头部样式 */
+            #header {
+                background-color: #2e3842;
+                padding: 2em;
+                color: white;
+                text-align: center;
+            }
+
+            /* 技能图标样式 */
+            .skills-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: center;
+            }
+
+            .skill-icon {
+                width: 60px;
+                height: 60px;
+                transition: transform 0.3s ease;
+            }
+
+            .skill-icon:hover {
+                transform: scale(1.1);
+            }
+
+            /* 响应式调整 */
+            @media (max-width: 480px) {
+                #header {
+                    position: static;
+                    width: 100%;
+                    padding: 1.5em;
+                }
+                .image.avatar {
+                    width: 150px;
+                    height: 150px;
+                }
+				.video-container {
+					aspect-ratio: 9/16; /* 竖屏优化 */
+				}
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="#" class="image avatar"><img src="images/avatar.jpg" alt="Mingxiang Chen" /></a>
+                <h1>
+                    <strong>Mingxiang Chen</strong><br>
+                    <span>MSc Robotics</span><br>
+                    <span>The University of Manchester</span><br>
+                    <span>Interested in Drones, Medical Robotics,</span><br>
+                    <span>Computer Vision and A.I</span>
+                </h1>
             </div>
-        </article>
-    </div>
-</section>
+        </header>
+
+        <!-- Main Content -->
+        <div id="main">
+
+            <!-- About Section -->
+            <section id="one">
+                <header class="major">
+                    <h2>About Me</h2>
+                </header>
+                <p>I am a postgraduate student at the University of Manchester, studying Robotics. I received my BSc (Hons) from The Huazhong University of Science and Technology.<br>
+                I am passionate about technology and enjoy using the latest software and hardware to solve problems. <br>
+                In the future, I would like to start a startup focusing on a field that interests me, such as Autonomous Vehicles, SLAM, Computer Vision, and AI.</p>
+            </section>
+
+            <!-- Working Projects -->
+            <section id="pproj">
+                <h2>WORKING PROJECTS</h2>
+                <div class="projects-grid">
+                    <!-- TPLINK Project -->
+                    <article class="project-item">
+                        <a href="https://github.com/CMX-9/working-projects" target="_blank" class="video-overlay-link">
+                            <div class="video-container">
+                                <video class="auto-play-video" muted loop playsinline poster="images/fulls/tp.jpg">
+                                    <source src="images/fulls/tp.mp4" type="video/mp4">
+                                </video>
+                                <img src="images/fulls/tp.jpg" alt="TPLINK Project" class="video-thumbnail">
+                            </div>
+                        </a>
+                        <div class="project-content">
+                            <h3><em>2020/07 ~ 2023/02 ,Image Processing Engineer, TPLINK</em></h3>
+                            <p>Responsible for the lens selection, function research and image related work of the company's various key projects (high sales volume and good user feedback) as well as the company's first and most valued full-featured high-speed dome project. Responsible for the training of new employees in the two courses ‘sensor principle and performance’ and ‘image brightness processing principle’ and the development of the ‘image brightness processing principle’ course. <br>Conducted several topic studies, such as the topic of humanoid optimisation.</p>
+                        </div>
+                    </article>
+
+                    <!-- Beijing T&S Project -->
+                    <article class="project-item">
+                        <a href="https://github.com/CMX-9/working-projects" target="_blank" class="video-overlay-link">
+                            <div class="video-container">
+                                <video class="auto-play-video" muted loop playsinline poster="images/fulls/chenan.png">
+                                    <source src="images/fulls/chenan-work-video2.mp4" type="video/mp4">
+                                </video>
+                                <img src="images/fulls/chenan.png" alt="Beijing T&S Project" class="video-thumbnail">
+                            </div>
+                        </a>
+                        <div class="project-content">
+                            <h3><em>2023/11/15~2024/07/29, Image Debugging Engineer, Beijing T&S Technology Co.</em></h3>
+                            <p>1）Complete this company's first camera image parameter debugging and shipment. <br>
+                            2）Write a lot of image group normative annotation technical guidance documents and test cases, etc. <br>
+                            3）Assist in the completion of the book laboratory and the big video division exhibition building.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- University Projects -->
+            <section id="uniproj">
+                <h2>UNIVERSITY PROJECTS</h2>
+                <div class="projects-grid">
+                    <!-- Workpiece Inspection -->
+                    <article class="project-item">
+                        <a href="https://github.com/CMX-9/Workpiece-Inspection" target="_blank" class="video-overlay-link">
+                            <div class="video-container">
+                                <video class="auto-play-video" muted loop playsinline poster="images/fulls/workpiece-inspection.png">
+                                    <source src="images/fulls/workpiece inspection.mp4" type="video/mp4">
+                                </video>
+                                <img src="images/fulls/workpiece-inspection.png" alt="Workpiece Inspection" class="video-thumbnail">
+                            </div>
+                        </a>
+                        <div class="project-content">
+                            <h3><em>Workpiece Inspection</em></h3>
+                            <p>Gigabit Ethernet industrial cameras are used to acquire pictures in real time, and on the Microsoft Visual C++ platform, image processing knowledge is applied to achieve workpiece classification detection (such as screws, nuts, etc.) and automatic recognition. Automatic identification of workpiece categories, counting the number of workpieces and area. First of all, image grey scale and binarization processing, the presence of noise on the image will affect the detection, so it is necessary to further image denoising pre-processing, and then find the connecting region, through the boundary detection and region growth and other ways to obtain features (size, shape, area, grey value of the centre and other features), and finally to achieve the goal of detecting and identifying.</p>
+                        </div>
+                    </article>
+
+                    <!-- Small Target Detection -->
+                    <article class="project-item">
+                        <a href="https://github.com/CMX-9/Small-target-detection" target="_blank" class="video-overlay-link">
+                            <div class="video-container">
+                                <video class="auto-play-video" muted loop playsinline poster="images/fulls/small-detection.bmp">
+                                    <source src="images/fulls/Small target detection of ships in the field of navigation.mp4" type="video/mp4">
+                                </video>
+                                <img src="images/fulls/small-detection.bmp" alt="Small Target Detection" class="video-thumbnail">
+                            </div>
+                        </a>
+                        <div class="project-content">
+                            <h3><em>Small target detection of ships in the field of navigation</em></h3>
+                            <p>In Visual Studio platform, C programming is used to achieve the detection of small targets on ships based on multi-feature analysis and morphological reconstruction. Accompanied by complex sea clutter background of different sizes, different numbers, different brightness, different shapes of the ship targets have a low false detection rate, the detection results using a rectangular box, the output of the number of detection results and the specific location.</p>
+                        </div>
+                    </article>
+
+                    <!-- Aviation Booking System -->
+                    <article class="project-item">
+                        <a href="https://github.com/CMX-9/Aviation-booking-and-information-management-system" target="_blank" class="video-overlay-link">
+                            <div class="video-container">
+                                <video class="auto-play-video" muted loop playsinline poster="images/fulls/booking.png">
+                                    <source src="images/fulls/Aviation booking and information management system.mp4" type="video/mp4">
+                                </video>
+                                <img src="images/fulls/booking.png" alt="Aviation Booking System" class="video-thumbnail">
+                            </div>
+                        </a>
+                        <div class="project-content">
+                            <h3><em>Aviation booking and information management system</em></h3>
+                            <p>Realise the real-time aviation information management system with C language programming, provide friendly aviation passengers and administrators with basic operation interface, realise administrators‘ backstage information management (e.g. adding, deleting, modifying flights, etc.), passengers and administrators’ log-in, passengers booking and refunding, and passengers' information modification.</p>
+                        </div>
+                    </article>
+
+                    <!-- Key Point Detection -->
+                    <article class="project-item">
+                        <a href="https://github.com/CMX-9/Remote-sensing-image-key-point-detection" target="_blank" class="video-overlay-link">
+                            <div class="video-container">
+                                <video class="auto-play-video" muted loop playsinline poster="images/fulls/key-point-detection.png">
+                                    <source src="images/fulls/key-point-detection-result.mp4" type="video/mp4">
+                                </video>
+                                <img src="images/fulls/key-point-detection.png" alt="Key Point Detection" class="video-thumbnail">
+                            </div>
+                        </a>
+                        <div class="project-content">
+                            <h3><em>Remote sensing image key point detection</em></h3>
+                            <p>The neural network method Faster R-CNN is implemented on the basis of the neural network method. First of all, the algorithm comparison analysis research to determine the algorithm and optimisation strategy, and then the data set collection and slicing as well as data calibration, followed by the establishment of neural networks, the detection of key points such as the corners of the surface building to achieve accurate guidance, training of the neural network, and ultimately the neural network detection and so on.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Robotics Projects -->
+            <section id="robotics-projects">
+                <h2>ROBOTICS PROJECTS</h2>
+                <div class="projects-grid">
+                    <article class="project-item">
+                        <a href="https://github.com/CMX-9/Netflix-Simple-Robot" target="_blank" class="video-overlay-link">
+                            <div class="video-container">
+                                <video class="auto-play-video" muted loop playsinline poster="images/fulls/Simple-Robot.png">
+                                    <source src="images/fulls/Simple-Robot.mp4" type="video/mp4">
+                                </video>
+                                <img src="images/fulls/Simple-Robot.png" alt="Netflix Simple Robot" class="video-thumbnail">
+                            </div>
+                        </a>
+                        <div class="project-content">
+                            <h3><em>Netflix Simple Robot</em></h3>
+                            <p>Using some commonly used waste items in life, we design a web robot that can be remotely controlled to walk, can walk autonomously, and can avoid obstacles when it meets obstacles. The robot's subsequent optimisation direction: automatic tracing function, voice control function, interactive function (including feedback on voice, vibration, etc.).</p>
+                        </div>
+                    </article>
+
+                    <article class="project-item">
+                        <a href="https://youtu.be/601AResOUCM" target="_blank" class="video-overlay-link">
+                            <div class="video-container">
+                                <video class="auto-play-video" muted loop playsinline poster="images/fulls/Robotics-Sustainable-Development.jpg">
+                                    <source src="images/fulls/Robotics-Sustainable-Development.mp4" type="video/mp4">
+                                </video>
+                                <img src="images/fulls/Robotics-Sustainable-Development.jpg" alt="Sustainable Development" class="video-thumbnail">
+                            </div>
+                        </a>
+                        <div class="project-content">
+                            <h3><em>Robotic Systems for Sustainable Development</em></h3>
+                            <p>Educational video about the contribution of robotic systems to addressing the challenges around sustainability and their ethical perspective.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <h2>SKILLS</h2>
+                <div class="skills-container">
+                    <img src="images/thumbs/python.png" alt="Python" class="skill-icon">
+                    <img src="images/thumbs/c.png" alt="C" class="skill-icon">
+                    <img src="images/thumbs/cpp.png" alt="C++" class="skill-icon">
+                    <img src="images/thumbs/matlab.png" alt="Matlab" class="skill-icon">
+                    <img src="images/thumbs/ros.png" alt="ROS" class="skill-icon">
+                    <img src="images/thumbs/vscode.png" alt="VSCode" class="skill-icon">
+                    <img src="images/thumbs/pycharm.png" alt="PyCharm" class="skill-icon">
+                    <img src="images/thumbs/jupyter.png" alt="Jupyter" class="skill-icon">
+                    <img src="images/thumbs/tinkercad.png" alt="Tinkercad" class="skill-icon">
+                </div>
+            </section>
+
+            <!-- Awards Section -->
+            <section id="awards">
+                <h2>Select Awards & Honor</h2>
+                <div class="projects-grid">
+                    <article class="project-item">
+                        <div class="project-content">
+                            <h3><em>* Software</em></h3>
+                            <p>Computer Level 2 Certificate (Language Programming Category)</p>
+                        </div>
+                    </article>
+                    <article class="project-item">
+                        <div class="project-content">
+                            <h3><em>* Activities</em></h3>
+                            <p>2016.10-2016.11 Fourth place in the Faculty Planning Competition</p>
+                        </div>
+                    </article>
+                    <article class="project-item">
+                        <div class="project-content">
+                            <h3><em>* Scholarships</em></h3>
+                            <p>Freshman & Junior Culture & Sports Scholarship; Sophomore Self-improvement Scholarship</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Get In Touch</h2>
+                <div class="row">
+                    <div class="col-8 col-12-small">
+                        <form method="post" action="#">
+                            <div class="row gtr-uniform gtr-50">
+                                <div class="col-6 col-12-xsmall">
+                                    <input type="text" name="name" id="name" placeholder="Name" />
+                                </div>
+                                <div class="col-6 col-12-xsmall">
+                                    <input type="email" name="email" id="email" placeholder="Email" />
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Send Message" class="primary" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-4 col-12-small">
+                        <ul class="labeled-icons">
+                            <li>
+                                <h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+                                (+44) 7377927864
+                            </li>
+                            <li>
+                                <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+                                <a href="mailto:chenxianghust163@gmail.com">chenxianghust163@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <ul class="icons">
+                        <li><a href="https://github.com/CMX-9" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/mingxiang-chen-1b69a8333/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="mailto:chenxianghust163@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                        <li><a href="assets/cv.pdf" class="button">Download CV</a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>&copy; Mingxiang Chen 2024</li>
+                        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.poptrox.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!-- 自动播放脚本 -->
+        <script>
+            document.querySelectorAll('.auto-play-video').forEach(video => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if(entry.isIntersecting) {
+                            video.play();
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(video);
+            });
+        </script>
+    </body>
+</html>
