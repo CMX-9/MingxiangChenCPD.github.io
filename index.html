@@ -205,6 +205,62 @@
 			color: #6ab0f3 !important;
 			text-decoration: underline;
 		}
+		
+		/* 差异化样式 */
+		.skill-card {
+			background: #f8f9fa;
+			border: 1px solid #dee2e6;
+			border-radius: 10px;
+			padding: 1.5rem;
+			margin-bottom: 2rem;
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		.skill-card:hover {
+			box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+			transform: translateY(-3px);
+		}
+
+		.skill-header {
+			display: flex;
+			align-items: center;
+			margin-bottom: 1.5rem;
+			padding-bottom: 1rem;
+			border-bottom: 2px solid #e9ecef;
+		}
+
+		.skill-icon {
+			font-size: 1.8rem;
+			color: #4a90e2;
+			margin-right: 1rem;
+		}
+
+		.tool-tag {
+			color: #6c757d;
+			font-size: 0.85em;
+			margin-left: 0.5rem;
+		}
+
+		.tool-stack {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+			gap: 1rem;
+			margin: 1.5rem 0;
+		}
+
+		.tool-item {
+			text-align: center;
+			padding: 0.8rem;
+			background: #fff;
+			border-radius: 6px;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+		}
+
+		.tool-item img {
+			width: 40px;
+			height: 40px;
+			margin-bottom: 0.5rem;
+		}
 
     </style>
 	</head>
@@ -617,27 +673,95 @@
 
 				<!-- Skills -->
 					<section id="skills">
-						<h2>TECHNICAL SKILLS</h2>
-						<!-- new adding-->
-						 <div class="skills-container">
-							<div class="skill-category">
-								<h3>Robotics & Autonomous Systems</h3>
-								<ul>
-									<li>SLAM (Simultaneous Localization and Mapping) - Implemented real-time mapping with LiDAR/IMU fusion on ROS2</li>
-									<li>Path Planning - Expertise in A*, TEB algorithms with 42% obstacle avoidance improvement</li>
-									<li>Drone Dynamics - Developed PID/Motion Control systems with 0.12m steady-state error</li>
-								</ul>
+						    <h2 class="section-divider">TECHNICAL SKILLS</h2>
+							<div class="skills-grid">
+								<!-- Robotics Systems -->
+								<div class="skill-card system-card">
+									<div class="skill-header">
+										<i class="fas fa-robot skill-icon"></i>
+										<h3>Robotic Systems Development</h3>
+									</div>
+									<div class="skill-body">
+										<div class="skill-group">
+											<h4>Manipulation Systems</h4>
+											<ul>
+												<li>Robotic arm trajectory planning <span class="tool-tag">(MoveIt!)</span></li>
+												<li>Force control implementation <span class="tool-tag">(ROS Control)</span></li>
+												<li>End-effector tool integration <span class="tool-tag">(URDF)</span></li>
+											</ul>
+										</div>
+										
+										<div class="skill-group">
+											<h4>Mobile Platforms</h4>
+											<ul>
+												<li>Autonomous navigation stack <span class="tool-tag">(ROS2 Nav2)</span></li>
+												<li>Multi-robot coordination <span class="tool-tag">(Swarm API)</span></li>
+												<li>Sensor fusion pipeline <span class="tool-tag">(EKF)</span></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<!-- Development Ecosystem -->
+								<div class="skill-card dev-card">
+									<div class="skill-header">
+										<i class="fas fa-tools skill-icon"></i>
+										<h3>Development Ecosystem</h3>
+									</div>
+									<div class="skill-body">
+										<div class="tool-stack">
+											<div class="tool-item">
+												<img src="icons/vscode.svg" alt="VSCode">
+												<span>VS Code</span>
+											</div>
+											<div class="tool-item">
+												<img src="icons/jupyter.svg" alt="Jupyter">
+												<span>Jupyter Lab</span>
+											</div>
+											<div class="tool-item">
+												<img src="icons/conda.svg" alt="Conda">
+												<span>Conda</span>
+											</div>
+										</div>
+										
+										<div class="skill-group">
+											<h4>Scientific Computing</h4>
+											<ul>
+												<li>Numerical analysis <span class="tool-tag">(NumPy/SciPy)</span></li>
+												<li>Data visualization <span class="tool-tag">(Matplotlib)</span></li>
+												<li>Algorithm prototyping <span class="tool-tag">(Jupyter)</span></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<!-- Intelligent Perception -->
+								<div class="skill-card ai-card">
+									<div class="skill-header">
+										<i class="fas fa-eye skill-icon"></i>
+										<h3>Intelligent Perception</h3>
+									</div>
+									<div class="skill-body">
+										<div class="skill-group">
+											<h4>Vision Systems</h4>
+											<ul>
+												<li>Real-time object tracking <span class="tool-tag">(OpenCV)</span></li>
+												<li>3D reconstruction <span class="tool-tag">(PCL)</span></li>
+												<li>Defect detection <span class="tool-tag">(CVAT)</span></li>
+											</ul>
+										</div>
+										
+										<div class="skill-group">
+											<h4>Learning Systems</h4>
+											<ul>
+												<li>Model deployment <span class="tool-tag">(ONNX/TensorRT)</span></li>
+												<li>Data pipeline <span class="tool-tag">(PyTorch)</span></li>
+												<li>Edge optimization <span class="tool-tag">(OpenVINO)</span></li>
+											</ul>
+										</div>
+									</div>
+								</div>
 							</div>
-							
-							<div class="skill-category">
-								<h3>Computer Vision & AI</h3>
-								<ul>
-									<li>OpenCV - Industrial workpiece detection system (98% accuracy)</li>
-									<li>PyTorch - Ship detection model with 0.85 mAP on maritime datasets</li>
-									<li>Sensor Fusion - Multi-modal data integration for environmental perception</li>
-								</ul>
-							</div>
-						</div>
 						
 						<div class="logo-container">
 							<!-- <a href="assets/python.pdf" target="_blank" rel="noopener noreferrer"> -->
