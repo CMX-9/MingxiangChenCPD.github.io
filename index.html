@@ -19,50 +19,49 @@
             font-family: 'Georgia'; 
             color: 333333;
         }
-		 #header {
-            <!-- width: 32%; /* 设置宽度为100%，占满整个页面 */ -->
-            background-color: green; /* 背景颜色为钢蓝色 */
-            padding: 20px; /* 内边距 */
-            color: white; /* 文字颜色为白色 */
-            text-align: center; /* 文本居中对齐 */
-        }
+		#header {
+			background-color: green;
+			padding: 20px;
+			color: white;
+			text-align: center;
+		}
+
+		/*===== 视频容器 =====*/
 		.video-container {
-		  position: relative;
-		  width: 100%;
+			position: relative;
+			width: 100%;
 		}
 
 		.auto-play-video {
-		  width: 100%;
-		  height: auto;
-		  display: block; /* 确保视频可见 */
+			width: 100%;
+			height: auto;
+			display: block;
 		}
 
 		.video-overlay-link {
-		  position: absolute;
-		  top: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 100%;
-		  opacity: 0; /* 隐藏缩略图，但保留点击区域 */
-		  cursor: pointer;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			cursor: pointer;
 		}
 
 		.video-thumbnail {
-		  width: 100%;
-		  height: auto;
+			width: 100%;
+			height: auto;
 		}
 
-		/* 确保标题链接样式 */
-		h3 a {
-		  text-decoration: none; 
-		  transition: color 0.3s ease;
+		/*===== 通用卡片样式 =====*/
+		.card {
+			padding: 1.5rem;
+			border-radius: 8px;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			margin-bottom: 1.5rem;
 		}
 
-		h3 a:hover {
-		  color: #007bff !important; /* 与你的主题色匹配 */
-		}
-		
-		<!-- new adding-->
+		/*===== 研究兴趣 =====*/
 		.research-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -72,14 +71,13 @@
 
 		.research-area {
 			background: #f7f7f7;
-			padding: 1.5rem;
-			border-radius: 8px;
-			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			border: 1px solid #e0e0e0;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 		}
 
 		.research-area h3 {
 			color: #2c3e50;
-			border-bottom: 2px solid rgba(52, 152, 219, 0.3);  /* 原色30%透明度 */
+			border-bottom: 2px solid rgba(52, 152, 219, 0.3);
 			padding-bottom: 0.5rem;
 			margin-bottom: 1rem;
 		}
@@ -92,8 +90,8 @@
 			margin-bottom: 0.8rem;
 			line-height: 1.4;
 		}
-		
-<!-- 		/* 奖项部分样式 */ -->
+
+		/*===== 奖项荣誉 =====*/
 		.awards-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -103,10 +101,8 @@
 
 		.compact-card {
 			background: #fafafa;
-			padding: 1.2rem;
-			border-radius: 6px;
+			border: 1px solid #e0e0e0;
 			box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-			transition: transform 0.2s ease;
 		}
 
 		.compact-card:hover {
@@ -117,7 +113,7 @@
 			color: #3498db;
 			font-size: 1.1rem;
 			margin-bottom: 0.8rem;
-			border-left: 3px solid #aed6f1; /* 浅蓝色侧边线 */
+			border-left: 3px solid #aed6f1;
 			padding-left: 0.8rem;
 		}
 
@@ -150,8 +146,8 @@
 			position: absolute;
 			left: 0;
 		}
-		
-		/* 新增暗色主题样式 */	
+
+		/*===== 暗色主题 =====*/
 		.dark-theme {
 			background: #1a1a1a;
 			padding: 2rem;
@@ -159,61 +155,36 @@
 			margin: 2rem 0;
 		}
 
-		.compact-card {
+		.dark-theme .compact-card {
 			background: #2d2d2d;
-			border: 1px solid #404040;
-			padding: 1.5rem;
-			border-radius: 8px;
-			margin-bottom: 1.5rem;
-			transition: transform 0.3s ease;
+			border-color: #404040;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 		}
 
-		.compact-card:hover {
-			transform: translateY(-5px);
-		}
-
-		.award-title {
+		.dark-theme .award-title {
 			color: #4a90e2;
-			border-left: 3px solid #4a90e2;
-			padding-left: 1rem;
-			margin: 0 0 1rem 0;
-			font-size: 1.2rem;
+			border-left-color: #4a90e2;
 		}
 
-		.card-subtitle {
-			color: #8c8c8c;
-			margin-bottom: 1rem;
-			font-style: italic;
-		}
-
-		.award-list li {
+		.dark-theme .award-list li {
 			color: #cccccc;
-			padding: 0.5rem 0;
-			border-bottom: 1px solid #333;
 		}
 
-		.award-list li:last-child {
-			border-bottom: none;
+		.dark-theme .award-list li::before {
+			color: #4a90e2;
 		}
 
-		.award-content {
-			padding: 0 1rem;
+		/*===== 技术技能 =====*/
+		.skills-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+			margin-top: 1.5rem;
 		}
-		
-		/* 链接悬停效果 */
-		.compact-card a:hover em {
-			color: #6ab0f3 !important;
-			text-decoration: underline;
-		}
-		
-		/* 差异化样式 */
+
 		.skill-card {
 			background: #f8f9fa;
 			border: 1px solid #dee2e6;
-			border-radius: 10px;
-			padding: 1.5rem;
-			margin-bottom: 2rem;
-			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 		}
 
 		.skill-card:hover {
@@ -241,25 +212,38 @@
 			margin-left: 0.5rem;
 		}
 
-		.tool-stack {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-			gap: 1rem;
-			margin: 1.5rem 0;
+		/*===== 响应式调整 =====*/
+		@media (max-width: 768px) {
+			.card {
+				margin-bottom: 1rem;
+			}
+			
+			.research-grid,
+			.awards-grid,
+			.skills-grid {
+				grid-template-columns: 1fr;
+			}
 		}
 
-		.tool-item {
-			text-align: center;
-			padding: 0.8rem;
-			background: #fff;
-			border-radius: 6px;
-			box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+		@media (max-width: 480px) {
+			.tool-stack {
+				grid-template-columns: repeat(2, 1fr);
+			}
 		}
 
-		.tool-item img {
-			width: 40px;
-			height: 40px;
-			margin-bottom: 0.5rem;
+		/*===== 交互效果 =====*/
+		h3 a {
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+
+		h3 a:hover {
+			color: #007bff !important;
+		}
+
+		.compact-card a:hover em {
+			color: #6ab0f3 !important;
+			text-decoration: underline;
 		}
 
     </style>
