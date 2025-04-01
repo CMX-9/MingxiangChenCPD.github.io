@@ -260,6 +260,34 @@
 			height: 40px;
 			margin-bottom: 0.5rem;
 		}
+		.tools-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+			gap: 1.5rem;
+			padding: 1rem;
+		}
+		.tool-item:hover {
+			transform: translateY(-3px);
+		}
+		.programming-logo {
+			width: 50px;
+			height: 50px;
+			margin-bottom: 0.5rem;
+			object-fit: contain;
+		}
+		.tool-item span {
+			font-size: 0.85rem;
+			color: #666;
+		}
+		.dark-theme .tool-item span {
+			color: #aaa;
+		}
+		/* 暗色主题适配 */
+		.dark-theme .compact-card {
+			background: #2d2d2d;
+			border: 1px solid #404040;
+		}
+
 
     </style>
 	</head>
@@ -756,11 +784,80 @@
 										<li>Prototyping Tools
 											<span class="award-meta">3D Printing · Laser Cutting</span>
 										</li>
-										<li>Industrial Standards
-											<span class="award-meta">ISO 13849 · IEC 61508</span>
-										</li>
 										<li>Technical Documentation
 											<span class="award-meta">LaTeX · Doxygen · Sphinx</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<div class="awards-grid">
+							<!-- Programming Languages -->
+							<div class="compact-card">
+								<h3 class="award-title">
+									<em>Programming & Tools</em>
+								</h3>
+								<div class="award-content">
+									<div class="tools-grid">
+										<div class="tool-item">
+											<img class="programming-logo" src="images/thumbs/python.png" alt="Python">
+											<span>Python</span>
+										</div>
+										<div class="tool-item">
+											<img class="programming-logo" src="images/thumbs/c.png" alt="C">
+											<span>C</span>
+										</div>
+										<div class="tool-item">
+											<img class="programming-logo" src="images/thumbs/cpp.png" alt="C++">
+											<span>C++</span>
+										</div>
+										<div class="tool-item">
+											<img class="programming-logo" src="images/thumbs/matlab.png" alt="Matlab">
+											<span>MATLAB</span>
+										</div>
+										<div class="tool-item">
+											<img class="programming-logo" src="images/thumbs/ros.png" alt="ROS">
+											<span>ROS</span>
+										</div>
+										<div class="tool-item">
+											<img class="programming-logo" src="images/thumbs/vscode.png" alt="VSCode">
+											<span>VS Code</span>
+										</div>
+										<div class="tool-item">
+											<img class="programming-logo" src="images/thumbs/pycharm.png" alt="PyCharm">
+											<span>PyCharm</span>
+										</div>
+										<div class="tool-item">
+											<img class="programming-logo" src="images/thumbs/jupyter.png" alt="Jupyter">
+											<span>Jupyter</span>
+										</div>
+										<div class="tool-item">
+											<img class="programming-logo" src="images/thumbs/tinkercad.png" alt="Tinkercad">
+											<span>Tinkercad</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 保持原有的Robotics Systems卡片 -->
+							<div class="compact-card">
+								<h3 class="award-title">
+									<em>Robotics Systems</em>
+								</h3>
+								<div class="award-content">
+									<ul class="award-list">
+										<li>Manipulation Systems
+											<span class="award-meta">MoveIt! · URDF · ROS Control</span>
+										</li>
+										<li>Autonomous Navigation
+											<span class="award-meta">ROS2 Nav2 · A* · D* Lite</span>
+										</li>
+										<li>Sensor Fusion
+											<span class="award-meta">EKF · IMU · LiDAR</span>
+										</li>
+										<li>Multi-Robot Coordination
+											<span class="award-meta">Swarm API · Task Allocation</span>
 										</li>
 									</ul>
 								</div>
@@ -781,18 +878,6 @@
 						<div class="logo-container">
 							<img class="programming-logo" src="images\thumbs\matlab.png" alt="Matlab">
 						</div>
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\opencv.png" alt="OpenCV"> -->
-						<!-- </div> -->
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\tf.png" alt="Tensorflow"> -->
-						<!-- </div> -->
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\pytorch.png" alt="PyTorch"> -->
-						<!-- </div> -->
-						<!-- <div class="logo-container"> -->
-							<!-- <img class="programming-logo" src="images\thumbs\git.png" alt="Git"> -->
-						<!-- </div> -->
 						<div class="ros-container">
 							<img class="ros-logo" src="images\thumbs\ros.png" alt="Ros">
 						</div>
@@ -805,6 +890,22 @@
 						<div class="logo-container">
 							<img class="programming-logo" src="images\thumbs\jupyter.png" alt="Jupyter">
 						</div>
+												<div class="logo-container">
+							<img class="programming-logo" src="images\thumbs\tinkercad.png" alt="Tinkercad">
+						</div>
+						<!-- <div class="logo-container"> -->
+							<!-- <img class="programming-logo" src="images\thumbs\opencv.png" alt="OpenCV"> -->
+						<!-- </div> -->
+						<!-- <div class="logo-container"> -->
+							<!-- <img class="programming-logo" src="images\thumbs\tf.png" alt="Tensorflow"> -->
+						<!-- </div> -->
+						<!-- <div class="logo-container"> -->
+							<!-- <img class="programming-logo" src="images\thumbs\pytorch.png" alt="PyTorch"> -->
+						<!-- </div> -->
+						<!-- <div class="logo-container"> -->
+							<!-- <img class="programming-logo" src="images\thumbs\git.png" alt="Git"> -->
+						<!-- </div> -->
+						
 						<!-- <div class="logo-container"> -->
 							<!-- <img class="programming-logo" src="images\thumbs\arduino.png" alt="Arduino"> -->
 						<!-- </div> -->
@@ -817,9 +918,7 @@
 						<!-- <div class="logo-container"> -->
 							<!-- <img class="programming-logo" src="images\thumbs\labview.png" alt="Labview"> -->
 						<!-- </div> -->
-						<div class="logo-container">
-							<img class="programming-logo" src="images\thumbs\tinkercad.png" alt="Tinkercad">
-						</div>
+
 
 <!-- 					</section>
 					Select Awards & Honor
@@ -851,6 +950,7 @@
 								<!-- <p>Can-sized satellite equipped with microcontrollers, sensors, and communication equipment to perform various tasks, such as collecting data and transmitting it to a ground station. My role in the team was to select the necessary sensors and design the PCBs.</p> -->
 							<!-- </article> -->
 <!-- 					</section> --> 
+					</section>
 					<!-- new adding -->
 					<section id="Awards">
 						<h2>Select Awards & Honor</h2>
