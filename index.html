@@ -61,6 +61,37 @@
 		h3 a:hover {
 		  color: #007bff !important; /* 与你的主题色匹配 */
 		}
+		
+		<!-- new adding-->
+		.research-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+			margin-top: 1.5rem;
+		}
+
+		.research-area {
+			background: #f7f7f7;
+			padding: 1.5rem;
+			border-radius: 8px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+		}
+
+		.research-area h3 {
+			color: #2c3e50;
+			border-bottom: 2px solid #3498db;
+			padding-bottom: 0.5rem;
+			margin-bottom: 1rem;
+		}
+
+		.research-area ul {
+			padding-left: 1.2rem;
+		}
+
+		.research-area li {
+			margin-bottom: 0.8rem;
+			line-height: 1.4;
+		}
 
     </style>
 	</head>
@@ -111,21 +142,37 @@
 						<div class="research-grid">
 							<div class="research-area">
 								<h3>Autonomous Navigation</h3>
-								<p>Developing robust SLAM systems for dynamic environments through:</p>
+								<p>Preliminary plan to develop robust SLAM systems for dynamic environments through:</p>
 								<ul>
-									<li>Multi-sensor fusion architectures</li>
-									<li>Adaptive path planning algorithms</li>
-									<li>Real-time performance optimization</li>
+									<li>Multi-sensor fusion architecture design</li>
+									<li>Adaptive path planning algorithm development</li>
+									<li>Real-time performance optimization strategies</li>
+									<li>Dynamic obstacle prediction models</li>
+									<li>Enhancement of long-term localization robustness</li>
 								</ul>
 							</div>
 
 							<div class="research-area">
-								<h3>Medical Robotics</h3>
-								<p>Exploring applications in:</p>
+								<h3>Computer Vision</h3>
+								<p>Preliminary plan to advance visual perception technologies through:</p>
 								<ul>
-									<li>Minimally invasive surgical systems</li>
-									<li>Rehabilitation robotics with haptic feedback</li>
-									<li>AI-assisted diagnostic platforms</li>
+									<li>Real-time multi-object tracking algorithm optimization</li>
+									<li>Multi-view geometric 3D reconstruction</li>
+									<li>Low-light image enhancement networks</li>
+									<li>Industrial defect detection system development</li>
+									<li>Autonomous driving multi-modal perception fusion</li>
+								</ul>
+							</div>
+
+							<div class="research-area">
+								<h3>Deep Learning</h3>
+								<p>Preliminary plan to promote intelligent system development through:</p>
+								<ul>
+									<li>Model compression for edge devices</li>
+									<li>Few-shot learning techniques research</li>
+									<li>Vision-language multi-modal fusion</li>
+									<li>Generative model applications for data augmentation</li>
+									<li>Explainable AI framework development</li>
 								</ul>
 							</div>
 						</div>
@@ -450,8 +497,28 @@
 
 				<!-- Skills -->
 					<section id="skills">
-						<h2>SKILLS</h2>
-						    
+						<h2>TECHNICAL SKILLS</h2>
+						<!-- new adding-->
+						 <div class="skills-container">
+							<div class="skill-category">
+								<h3>Robotics & Autonomous Systems</h3>
+								<ul>
+									<li>SLAM (Simultaneous Localization and Mapping) - Implemented real-time mapping with LiDAR/IMU fusion on ROS2</li>
+									<li>Path Planning - Expertise in A*, TEB algorithms with 42% obstacle avoidance improvement</li>
+									<li>Drone Dynamics - Developed PID/Motion Control systems with 0.12m steady-state error</li>
+								</ul>
+							</div>
+							
+							<div class="skill-category">
+								<h3>Computer Vision & AI</h3>
+								<ul>
+									<li>OpenCV - Industrial workpiece detection system (98% accuracy)</li>
+									<li>PyTorch - Ship detection model with 0.85 mAP on maritime datasets</li>
+									<li>Sensor Fusion - Multi-modal data integration for environmental perception</li>
+								</ul>
+							</div>
+						</div>
+						
 						<div class="logo-container">
 							<!-- <a href="assets/python.pdf" target="_blank" rel="noopener noreferrer"> -->
 							<img class="programming-logo" src="images\thumbs\python.png" alt="Python"></a>
