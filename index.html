@@ -92,6 +92,64 @@
 			margin-bottom: 0.8rem;
 			line-height: 1.4;
 		}
+		
+<!-- 		/* 奖项部分样式 */ -->
+		.awards-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+			gap: 1.5rem;
+			margin-top: 1.2rem;
+		}
+
+		.compact-card {
+			background: #fafafa;
+			padding: 1.2rem;
+			border-radius: 6px;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+			transition: transform 0.2s ease;
+		}
+
+		.compact-card:hover {
+			transform: translateY(-3px);
+		}
+
+		.award-title {
+			color: #3498db;
+			font-size: 1.1rem;
+			margin-bottom: 0.8rem;
+			border-left: 3px solid #aed6f1; /* 浅蓝色侧边线 */
+			padding-left: 0.8rem;
+		}
+
+		.award-content {
+			font-size: 0.95rem;
+			line-height: 1.5;
+		}
+
+		.award-meta {
+			display: block;
+			color: #7f8c8d;
+			font-size: 0.85rem;
+			margin-top: 0.5rem;
+		}
+
+		.award-list {
+			list-style: none;
+			padding-left: 0;
+		}
+
+		.award-list li {
+			position: relative;
+			padding-left: 1.2rem;
+			margin-bottom: 0.4rem;
+		}
+
+		.award-list li::before {
+			content: "•";
+			color: #3498db;
+			position: absolute;
+			left: 0;
+		}
 
     </style>
 	</head>
@@ -573,8 +631,7 @@
 							<img class="programming-logo" src="images\thumbs\tinkercad.png" alt="Tinkercad">
 						</div>
 
-					</section>
-
+<!-- 					</section>
 					Select Awards & Honor
 					<section id="Awards">
 						<h2>Select Awards & Honor</h2>
@@ -603,6 +660,48 @@
 								<!-- <a href="images/fulls/cansat.mp4" target="_blank" rel="noopener noreferrer" class="image fit thumb"><img src="images/fulls/cansat.gif" alt="" /></a><h3>American Astronautical Society (AAS) CanSat</h3> -->
 								<!-- <p>Can-sized satellite equipped with microcontrollers, sensors, and communication equipment to perform various tasks, such as collecting data and transmitting it to a ground station. My role in the team was to select the necessary sensors and design the PCBs.</p> -->
 							<!-- </article> -->
+<!-- 					</section> --> 
+					<!-- new adding -->
+					<section id="Awards">
+						<h2>Select Awards & Honor</h2>
+						<div class="awards-grid">
+							<div class="compact-card">
+								<h3 class="award-title">
+									<a href="images/fulls/C certificate.jpg" target="_blank" rel="noopener noreferrer">
+										<em>Software Certification</em>
+									</a>
+								</h3>
+								<div class="award-content">
+									<p>National Computer Rank Examination (C Language Programming)</p>
+									<span class="award-meta">Issued by: Ministry of Education of China</span>
+								</div>
+							</div>
+
+							<div class="compact-card">
+								<div class="award-title">
+									<em>Competition Achievement</em>
+								</div>
+								<div class="award-content">
+									<p>4th Place - Faculty Innovation Planning Competition</p>
+									<span class="award-meta">Oct-Nov 2016 | Project Management & Coordination</span>
+								</div>
+							</div>
+
+							<div class="compact-card">
+								<h3 class="award-title">
+									<a href="images/fulls/scholarship.jpg" target="_blank" rel="noopener noreferrer">
+										<em>Academic Honors</em>
+									</a>
+								</h3>
+								<div class="award-content">
+									<ul class="award-list">
+										<li>Freshman Culture & Sports Scholarship</li>
+										<li>Sophomore Self-Improvement Scholarship</li>
+										<li>Junior Academic Excellence Award</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</section>
 				<!-- Three -->
 					<section id="three">
