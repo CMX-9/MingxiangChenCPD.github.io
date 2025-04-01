@@ -79,7 +79,7 @@
 
 		.research-area h3 {
 			color: #2c3e50;
-			border-bottom: 2px solid #3498db;
+			border-bottom: 2px solid rgba(52, 152, 219, 0.3);  /* 原色30%透明度 */
 			padding-bottom: 0.5rem;
 			margin-bottom: 1rem;
 		}
@@ -149,6 +149,47 @@
 			color: #3498db;
 			position: absolute;
 			left: 0;
+		}
+		
+		/* 新增暗色主题样式 */
+		.dark-theme .awards-grid {
+			background: #1a1a1a;
+			padding: 2rem;
+			border-radius: 12px;
+		}
+
+		.compact-card {
+			background: #2d2d2d !important;
+			border: 1px solid #404040;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+		}
+
+		.dark-theme h2 {
+			color: #e0e0e0;
+			border-bottom: 2px solid #4a90e2;
+			padding-bottom: 0.8rem;
+		}
+
+		.award-title em {
+			color: #4a90e2 !important;
+		}
+
+		.award-content p {
+			color: #cccccc;
+		}
+
+		.award-meta {
+			color: #8c8c8c !important;
+		}
+
+		.award-list li::before {
+			color: #4a90e2;
+		}
+		
+		/* 链接悬停效果 */
+		.compact-card a:hover em {
+			color: #6ab0f3 !important;
+			text-decoration: underline;
 		}
 
     </style>
@@ -662,7 +703,7 @@
 							<!-- </article> -->
 <!-- 					</section> --> 
 					<!-- new adding -->
-					<section id="Awards">
+					<section id="Awards" class="dark-theme">
 						<h2>Select Awards & Honor</h2>
 						<div class="awards-grid">
 							<div class="compact-card">
@@ -672,8 +713,8 @@
 									</a>
 								</h3>
 								<div class="award-content">
-									<p>National Computer Rank Examination (C Language Programming)</p>
-									<span class="award-meta">Issued by: Ministry of Education of China</span>
+									<li>National Computer Rank Examination (C Language Programming)</li>
+									<li>Issued by: Ministry of Education of China</li>
 								</div>
 							</div>
 
@@ -682,8 +723,8 @@
 									<em>Competition Achievement</em>
 								</div>
 								<div class="award-content">
-									<p>4th Place - Faculty Innovation Planning Competition</p>
-									<span class="award-meta">Oct-Nov 2016 | Project Management & Coordination</span>
+									<li>4th Place - Faculty Innovation Planning Competition</li>
+									<li>Oct-Nov 2016 | Project Management & Coordination</li>
 								</div>
 							</div>
 
