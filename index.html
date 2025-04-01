@@ -151,39 +151,53 @@
 			left: 0;
 		}
 		
-		/* 新增暗色主题样式 */
-		.dark-theme .awards-grid {
+		/* 新增暗色主题样式 */	
+		.dark-theme {
 			background: #1a1a1a;
 			padding: 2rem;
 			border-radius: 12px;
+			margin: 2rem 0;
 		}
 
 		.compact-card {
-			background: #2d2d2d !important;
+			background: #2d2d2d;
 			border: 1px solid #404040;
-			box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+			padding: 1.5rem;
+			border-radius: 8px;
+			margin-bottom: 1.5rem;
+			transition: transform 0.3s ease;
 		}
 
-		.dark-theme h2 {
-			color: #e0e0e0;
-			border-bottom: 2px solid #4a90e2;
-			padding-bottom: 0.8rem;
+		.compact-card:hover {
+			transform: translateY(-5px);
 		}
 
-		.award-title em {
-			color: #4a90e2 !important;
-		}
-
-		.award-content p {
-			color: #cccccc;
-		}
-
-		.award-meta {
-			color: #8c8c8c !important;
-		}
-
-		.award-list li::before {
+		.award-title {
 			color: #4a90e2;
+			border-left: 3px solid #4a90e2;
+			padding-left: 1rem;
+			margin: 0 0 1rem 0;
+			font-size: 1.2rem;
+		}
+
+		.card-subtitle {
+			color: #8c8c8c;
+			margin-bottom: 1rem;
+			font-style: italic;
+		}
+
+		.award-list li {
+			color: #cccccc;
+			padding: 0.5rem 0;
+			border-bottom: 1px solid #333;
+		}
+
+		.award-list li:last-child {
+			border-bottom: none;
+		}
+
+		.award-content {
+			padding: 0 1rem;
 		}
 		
 		/* 链接悬停效果 */
@@ -236,43 +250,50 @@
 							</article>
 					</section>    
 					-->
-					<section id="research">
+					<!-- RESEARCH SECTION -->
+					<section id="research" class="dark-theme">
 						<h2>RESEARCH INTERESTS & OBJECTIVES</h2>
-						<div class="research-grid">
-							<div class="research-area">
-								<h3>Autonomous Navigation</h3>
-								<p>Preliminary plan to develop robust SLAM systems for dynamic environments through:</p>
-								<ul>
-									<li>Multi-sensor fusion architecture design</li>
-									<li>Adaptive path planning algorithm development</li>
-									<li>Real-time performance optimization strategies</li>
-									<li>Dynamic obstacle prediction models</li>
-									<li>Enhancement of long-term localization robustness</li>
-								</ul>
+						<div class="awards-grid">  <!-- 使用相同网格系统 -->
+							<div class="compact-card">
+								<h3 class="award-title">Autonomous Navigation</h3>
+								<div class="award-content">
+									<p class="card-subtitle">Preliminary development plan:</p>
+									<ul class="award-list">
+										<li>Multi-sensor fusion architecture design</li>
+										<li>Adaptive path planning algorithms</li>
+										<li>Real-time performance optimization</li>
+										<li>Dynamic obstacle prediction models</li>
+										<li>Long-term localization enhancement</li>
+									</ul>
+								</div>
 							</div>
 
-							<div class="research-area">
-								<h3>Computer Vision</h3>
-								<p>Preliminary plan to advance visual perception technologies through:</p>
-								<ul>
-									<li>Real-time multi-object tracking algorithm optimization</li>
-									<li>Multi-view geometric 3D reconstruction</li>
-									<li>Low-light image enhancement networks</li>
-									<li>Industrial defect detection system development</li>
-									<li>Autonomous driving multi-modal perception fusion</li>
-								</ul>
+							<div class="compact-card">
+								<h3 class="award-title">Computer Vision</h3>
+								<div class="award-content">
+									<p class="card-subtitle">Technical advancement strategy:</p>
+									<ul class="award-list">
+										<li>Real-time multi-object tracking</li>
+										<li>Multi-view 3D reconstruction</li>
+										<li>Low-light image enhancement</li>
+										<li>Industrial defect detection</li>
+										<li>Multi-modal perception fusion</li>
+									</ul>
+								</div>
 							</div>
 
-							<div class="research-area">
-								<h3>Deep Learning</h3>
-								<p>Preliminary plan to promote intelligent system development through:</p>
-								<ul>
-									<li>Model compression for edge devices</li>
-									<li>Few-shot learning techniques research</li>
-									<li>Vision-language multi-modal fusion</li>
-									<li>Generative model applications for data augmentation</li>
-									<li>Explainable AI framework development</li>
-								</ul>
+							<div class="compact-card">
+								<h3 class="award-title">Deep Learning</h3>
+								<div class="award-content">
+									<p class="card-subtitle">System development approach:</p>
+									<ul class="award-list">
+										<li>Edge device model compression</li>
+										<li>Few-shot learning techniques</li>
+										<li>Vision-language fusion</li>
+										<li>Generative data augmentation</li>
+										<li>Explainable AI frameworks</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</section>
